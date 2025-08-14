@@ -12,13 +12,13 @@
 
 int main()
 {
-    glEnable(GL_BLEND);
-    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
     std::cout << "Hello World!\n";
 
     MyWindow window(1920, 1080, "gravity_simulation");
 
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     float positions[] = {
         -0.5f, -0.5f, 1.0, 0.0, 0.0, 0.0, 0.0,
          0.5f, -0.5f, 0.0, 1.0, 0.0, 1.0, 0.0,
@@ -26,7 +26,7 @@ int main()
         -0.5f,  0.5f, 1.0, 1.0, 1.0, 0.0, 1.0
     };
 
-    uint indicies[] = {
+    unsigned int indicies[] = {
         0, 1, 2,
         2, 3, 0
     };
@@ -34,7 +34,7 @@ int main()
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
-    uint vao;
+    unsigned int vao;
     GLCall(glGenVertexArrays(1, &vao));
     GLCall(glBindVertexArray(vao));
 

@@ -9,8 +9,8 @@ struct ShaderProgramSource {
 };
 
 ShaderProgramSource ParseShader(const std::string& filepath);
-uint CompileShader(uint type, const std::string& source);
-uint CreateShader(const std::string& vertexShader, const std::string& fragmentShader);
+unsigned int CompileShader(unsigned int type, const std::string& source);
+unsigned int CreateShader(const std::string& vertexShader, const std::string& fragmentShader);
 
 class Shader {
 public:

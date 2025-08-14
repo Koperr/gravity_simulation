@@ -30,9 +30,12 @@ public:
     VertexBufferLayout()
         : m_Stride(0) {}
 
+    template<typename>
+    struct always_false : std::false_type {};
+
     template<typename T>
     void Push(unsigned int count) {
-        static_assert(false);
+        static_assert(always_false<T>::value);
     }
 
 
