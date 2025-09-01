@@ -27,6 +27,15 @@ MyWindow::MyWindow(int width, int height, const std::string& title) {
         std::exit(-1);
     }
 
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    glEnable(GL_DEPTH_TEST);
+
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
+    glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+
     std::cout << "OpenGL version" << glGetString(GL_VERSION) << std::endl;
 }
 
@@ -45,4 +54,9 @@ void MyWindow::pollEvents() {
 
 void MyWindow::swapBuffers() {
     glfwSwapBuffers(window);
+}
+
+void MyWindow::changeWindowTitle(const std::string &title)
+{
+    glfwSetWindowTitle(window, title.c_str());
 }

@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.10)
 project(black_hole)
 
 set(CMAKE_BUILD Debug)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CSS_FLAGS} -Wall -std=c++17")
 #set(CMAKE_CXX_FLAGS "${CMAKE_CSS_FLAGS} -Wall -Werror -std=c++17")
@@ -29,4 +30,6 @@ target_link_libraries(${PROJECT_NAME}
 )
 
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/inc
-                            ${CMAKE_CURRENT_SOURCE_DIR}/src/vendor/stb_image)
+                            ${CMAKE_CURRENT_SOURCE_DIR}/src/vendor/stb_image
+                            ${CMAKE_CURRENT_SOURCE_DIR}/src/vendor/glm
+                            ${GLFW_INCLUDE_DIRS})
